@@ -1,0 +1,145 @@
+# UAV Strategic Deconfliction System: Detailed Project Notes
+
+## 1. Project Architecture
+
+### 1.1 Core Components
+- **Data Models (`models.py`)**: 
+  - `Waypoint`: Represents a 3D point in space with optional timing
+  - `Mission`: Collection of waypoints with time window and drone ID
+  - `ConflictResult`: Stores conflict detection results and details
+
+- **Conflict Detection Engine (`core.py`)**:
+  - `DeconflictionSystem`: Main class that checks missions for conflicts
+  - Implements spatial and temporal conflict detection algorithms
+  - Provides methods for querying mission safety
+
+- **Visualization System (`visualization.py`)**:
+  - `MissionVisualizer`: Creates static and animated visualizations
+  - Generates spatial views, timelines, and animations
+  - Highlights conflicts with appropriate visual markers
+
+### 1.2 Flow of Operation
+1. Initialize system with known drone flight paths
+2. Submit a mission for verification
+3. System checks for spatial-temporal conflicts
+4. Results are returned with detailed conflict information if found
+5. Optional visualization provides graphical representation
+
+## 2. Key Algorithms
+
+### 2.1 Line Segment Distance Calculation
+- Uses vector mathematics to find minimum distance between line segments
+- Handles special cases like parallel lines and collinear points
+- Optimized for efficient distance computation
+
+### 2.2 Spatial-Temporal Conflict Detection
+- Two-phase checking approach:
+  1. First check for overlapping time windows (temporal filter)
+  2. Then check for spatial proximity during overlapping times
+- Interpolates positions between waypoints for continuous path representation
+- Time interpolation for precise conflict timing information
+
+### 2.3 Mission Time Management
+- Automatic distribution of timing across waypoints if not provided
+- Proper handling of time window constraints
+- Time-based interpolation for animation and conflict detection
+
+## 3. Technical Implementation Details
+
+### 3.1 Data Structures
+- Efficient use of NumPy arrays for coordinate representation
+- Vector-based distance calculations for performance
+- Custom dataclasses for clean, type-hinted data models
+
+### 3.2 Conflict Detection
+- Minimum safe distance parameter for conflict threshold
+- Point-to-point and segment-to-segment distance calculations
+- Checks all possible combinations of path segments between missions
+
+### 3.3 Visualization Techniques
+- Matplotlib-based plotting for static visualizations
+- Animation framework for time-based visualization
+- Color-coding and markers for clear conflict identification
+
+## 4. Testing Strategy
+
+### 4.1 Unit Testing
+- Comprehensive tests for all model classes
+- Dedicated tests for core algorithmic components
+- Visualization correctness testing
+
+### 4.2 Test Scenarios
+- Conflict-free missions
+- Missions with spatial but not temporal overlap
+- Missions with both spatial and temporal conflicts
+- Edge cases like parallel paths and exact intersections
+- 3D altitude-based separation testing
+
+### 4.3 Test Coverage
+- Core algorithms thoroughly tested
+- Edge cases verified
+- Model validation tested
+
+## 5. Performance Considerations
+
+### 5.1 Computational Complexity
+- O(n×m) where n and m are the number of segments in compared missions
+- Optimization through early rejection of non-overlapping time windows
+- Vectorized calculations for distance computation
+
+### 5.2 Scaling Challenges
+- Performance with thousands of drones requires spatial indexing
+- Potential for quadtree/octree implementation for spatial queries
+- Parallel processing opportunities for independent conflict checks
+
+### 5.3 Future Optimizations
+- Spatial indexing for large-scale scenarios
+- GPU acceleration for distance calculations
+- Distributed computing for enterprise deployment
+
+## 6. Interview-Specific Topics
+
+### 6.1 Project Challenges
+- Efficient collision detection between flight path segments
+- Accurate representation of 4D (space + time) conflicts
+- Creating intuitive visualizations of complex data
+
+### 6.2 Technical Decisions
+- Python chosen for scientific computing libraries and visualization tools
+- Object-oriented design for clear component separation
+- Test-driven development for reliability
+
+### 6.3 AI Integration Potential
+- Path optimization to automatically resolve conflicts
+- Predictive conflict detection based on historical patterns
+- Machine learning for dynamic safety buffer adjustment
+
+### 6.4 Key Contributions
+- Clean, well-structured architecture
+- Comprehensive collision detection with detailed reporting
+- Rich visualization capabilities for both technical and non-technical users
+
+### 6.5 Scaling Discussion
+- Current implementation suitable for hundreds of drones
+- Architectural modifications needed for thousands of simultaneous flights
+- Potential to integrate with external data sources (weather, restricted zones)
+
+## 7. Code Walkthrough Preparation
+
+### 7.1 Key Files to Understand
+- `models.py`: Data structures
+- `core.py`: Main conflict detection logic
+- `visualization.py`: Visualization components
+- `example_scenarios.py`: Example use cases
+
+### 7.2 Important Methods
+- `check_mission()`: Entry point for conflict checking
+- `_check_path_conflicts()`: Core conflict detection algorithm
+- `_min_distance_segments()`: Geometric distance calculation
+- `visualize()` and `animate_mission()`: Visualization methods
+
+### 7.3 Algorithm Explanation
+Be prepared to explain:
+- How minimum distance between line segments is calculated
+- How spatial and temporal conflicts are detected together
+- How visualizations represent 4D data effectively 

@@ -1,0 +1,63 @@
+# UAV Strategic Deconfliction System: Project Documentation for Recruiters
+
+## Project Overview
+The UAV Strategic Deconfliction System is a software solution designed to detect and visualize potential conflicts between multiple drone flight paths in shared airspace. The system implements spatial-temporal conflict detection algorithms and provides comprehensive visualization tools for drone flight safety verification.
+
+## AI Contribution Disclosure
+In the development of this project, artificial intelligence tools were utilized in the following capacity:
+
+- **Code Implementation**: AI assistance was used to translate conceptual algorithms into Python code, including the implementation of vector mathematics, conflict detection logic, and visualization components.
+
+- **Software Architecture**: AI provided guidance on structuring the codebase into modular components (models, core algorithms, and visualization modules).
+
+- **Documentation Generation**: AI assisted in creating explanatory documentation and code comments.
+
+## Personal Contribution
+The key contributions I personally developed for this project include:
+
+- **Core Concept Development**: I conceived the fundamental approach of representing drone missions as sequences of waypoints and flight path segments. The critical insight that "if two flight paths come closer than a defined safety zone (50 meters), it constitutes a conflict" was my original conception.
+
+- **Algorithmic Concept**: I developed the conceptual framework for checking minimum distance between flight path segments rather than just discrete points, which significantly improves conflict detection accuracy.
+
+- **Scenario Design**: I personally designed all test scenarios to demonstrate different aspects of the system:
+  - **Scenario 1**: A mission that appears safe but contains a subtle conflict
+  - **Scenario 2**: A mission with multiple conflicts across different times and locations
+  - **Scenario 3**: A demonstration of altitude-based separation for 3D conflict resolution
+
+- **Validation & Testing**: I designed the testing methodology to ensure accurate conflict detection across various edge cases.
+
+- **Project Direction**: I defined the project requirements, determined feature priorities, and made architectural decisions regarding system capabilities.
+
+## Technical Implementation Details
+The system employs a modular architecture with three main components:
+
+1. **Data Models**: Representing waypoints, missions, and conflict results
+2. **Conflict Detection Algorithms**: Implementing spatial-temporal analysis
+3. **Visualization Components**: Providing clear representation of results
+
+The conflict detection algorithm uses vector mathematics to calculate minimum distances between flight path segments and integrates temporal information to determine when potential conflicts occur. The system evaluates both 2D (horizontal) conflicts and supports 3D analysis with altitude-based separation.
+
+## Project Outcomes
+The implemented system successfully:
+- Detects potential conflicts between multiple drone flight paths
+- Provides detailed conflict information (location, time, separation distance)
+- Visualizes flight paths and conflicts through spatial plots, timelines, and animations
+- Validates the effectiveness of altitude-based separation for conflict resolution
+
+## Relevant Skills Demonstrated
+This project demonstrates proficiency in:
+- Python programming with object-oriented design
+- Algorithm development and computational geometry
+- Data visualization and animation
+- Spatial-temporal data analysis
+- Technical problem-solving and system architecture
+- Documentation and technical communication
+
+## Learning Outcomes and Future Development
+This project demonstrates my ability to:
+- Conceptualize solutions for complex spatial-temporal problems
+- Design effective testing scenarios for validation
+- Direct the development of a complete software system
+- Utilize AI tools effectively to implement technical concepts
+
+Future development opportunities include integrating machine learning for predictive conflict resolution, implementing real-time updates for dynamic flight plans, and developing optimization algorithms for automatic path planning. 

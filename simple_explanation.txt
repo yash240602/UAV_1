@@ -1,0 +1,27 @@
+# UAV Drone Safety System: Simple Explanation
+
+## What This Project Does
+
+This project helps keep drones safe in the sky by making sure they don't bump into each other.
+
+Imagine many delivery drones flying around a city. Without a system to coordinate them, they might crash into each other! Our system solves this problem.
+
+## How It Works (In Simple Terms)
+
+1. **Planning Ahead**: Before a drone takes off, it tells our system where it wants to go and when.
+
+2. **Checking for Problems**: Our system looks at all other drones' paths to see if there might be any close calls.
+
+3. **Safety Decisions**: The system then tells you if it's safe to fly or if there might be a problem.
+
+4. **Helpful Pictures**: The system shows maps and timelines so you can see exactly where and when any problems might happen.
+
+## Real-World Example
+
+Think about traffic lights at road intersections. They prevent cars from crashing by controlling when each car can go through. Our system does something similar for drones, but in 3D space and without physical traffic lights!
+
+## Why This Matters
+
+As more drones fill our skies for deliveries, photography, and other services, keeping them from crashing becomes very important. This system helps make drone operations safer for everyone.
+
+Our system is like an air traffic controller for drones, making sure everything flies smoothly and safely! 

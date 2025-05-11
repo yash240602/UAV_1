@@ -1,0 +1,41 @@
+# UAV Strategic Deconfliction System - Demonstration Script
+
+## Introduction (30 seconds)
+"Hello everyone, today I'm excited to demonstrate the UAV Strategic Deconfliction System I've developed. This system addresses a critical challenge in the growing drone industry: ensuring multiple drones can safely share the same airspace without collisions. As drones become more common for deliveries, photography, and other applications, the need for automated conflict detection becomes essential."
+
+## Project Overview (45 seconds)
+"The system I've built functions as a safety verification layer that analyzes drone flight plans before execution. It takes a primary drone's planned mission - consisting of waypoints and timing information - and checks it against all other known drone flights in the area. The system then determines if the mission is safe to fly or if there are potential conflicts, providing detailed information about when and where conflicts might occur."
+
+## System Architecture (30 seconds)
+"I designed this system with a modular architecture that separates:
+1. Data models for representing waypoints, missions, and conflict results
+2. Core algorithms for spatial and temporal conflict detection
+3. Visualization components for clear representation of results
+
+This separation made the system easier to develop, test, and extend with new features."
+
+## Core Functionality Demonstration (1 minute)
+"Let me show you how the system works in practice. I'll run through three scenarios:
+
+First, let's look at a mission that has conflicts with other drones in the airspace. The system is checking both the spatial proximity and the timing of all flight paths.
+
+As you can see, the system has detected multiple conflicts, showing precisely where and when they would occur. For each conflict, we get the exact location, time, and distance information - all crucial for safety decisions.
+
+Now, let's look at our third scenario which demonstrates altitude-based separation. By flying at different altitudes, drones can safely share the same 2D space. The system correctly identifies that even though the paths cross in 2D, there's sufficient vertical separation."
+
+## Visualization Capabilities (1 minute)
+"One of the key features of this system is its powerful visualization capabilities. As you can see:
+
+The spatial view shows drone paths in physical space, with red circles highlighting conflict areas. The primary mission is clearly marked in red, with other flights in different colors.
+
+The timeline view displays when each drone is active and marks conflict points along the time axis.
+
+And finally, the animation feature shows how drones move through space over time, giving a dynamic view of the entire scenario. This is particularly valuable for understanding complex interactions between multiple flight paths."
+
+## Technical Highlights (30 seconds)
+"From a technical perspective, the system uses vector mathematics to efficiently calculate minimum distances between flight path segments. The conflict detection algorithm works in two phases: first checking for overlapping time windows as a quick filter, then performing detailed spatial analysis only when necessary.
+
+I implemented comprehensive test coverage to ensure reliability across different scenarios, including edge cases like parallel paths and exact intersections."
+
+## Conclusion (15 seconds)
+"In conclusion, this UAV Strategic Deconfliction System provides a robust solution for ensuring drone flight safety in shared airspace. It combines efficient algorithms with clear visualizations to make complex spatial-temporal conflicts easy to understand. Thank you for your attention, and I'm happy to answer any questions." 
